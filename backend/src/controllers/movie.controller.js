@@ -31,7 +31,7 @@ export const createMovie = async (req, res) => {
 }
 
 export const updateMovie = async (req, res) => {
-    const { id } = req.prammas
+    const { id } = req.params
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).json({ success: false, message: 'Invalid Product ID' })
@@ -47,7 +47,7 @@ export const updateMovie = async (req, res) => {
 }
 
 export const deleteMovie = async (req, res) => {
-    const { id } = req.pramas
+    const { id } = req.params
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).json({ success: false, message: 'Invalid Product ID' })
