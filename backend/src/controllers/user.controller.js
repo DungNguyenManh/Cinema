@@ -1,6 +1,7 @@
 import User from '../models/user.model.js'
+import mongoose from 'mongoose'
 
-export const getUser = async () => {
+export const getUser = async (req, res) => {
     try {
         const user = await User.find({})
         if (user.length === 0) {
