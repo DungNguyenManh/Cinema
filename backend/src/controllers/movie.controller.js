@@ -38,8 +38,8 @@ export const updateMovie = async (req, res) => {
     }
 
     try {
-        const updateMovie = await Movie.findByIdAndUpdate(id, req.body, { new: true })
-        res.status(200).json({ success: true, data: updateMovie })
+        const movie = await Movie.findByIdAndUpdate(id, req.body, { new: true })
+        res.status(200).json({ success: true, data: movie })
     } catch (error) {
         console.error(error)
         res.status(404).json({ success: false, message: 'Server Error' })

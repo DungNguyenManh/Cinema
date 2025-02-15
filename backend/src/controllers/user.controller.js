@@ -39,8 +39,8 @@ export const updateUser = async (req, res) => {
     }
 
     try {
-        const updateUser = await User.findByIdAndUpdate(id, req.body, { new: true })
-        res.status(200).json({ success: true, data: updateUser })
+        const user = await User.findByIdAndUpdate(id, req.body, { new: true })
+        res.status(200).json({ success: true, data: user })
     } catch (error) {
         res.status(404).json({ success: false, message: 'Server Error' })
     }
