@@ -31,7 +31,7 @@ export const createRoom = async (req, res) => {
 }
 
 export const updateRoom = async (req, res) => {
-    const { id } = req.parmas
+    const { id } = req.params
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).json({ success: false, message: 'Invalid Room ID' })
@@ -47,7 +47,7 @@ export const updateRoom = async (req, res) => {
 }
 
 export const deleteRoom = async (req, res) => {
-    const { id } = req.parmas
+    const { id } = req.params
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).json({ success: false, message: 'Invalid Room ID' })
