@@ -5,8 +5,9 @@ const roomSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    seat_capacity: {
+    total_seats: {
         type: Number,
+        default: 500,
         required: true
     }
 },
